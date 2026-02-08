@@ -1,0 +1,18 @@
+/ {
+    pl-bus {
+        i2c@41600000 {
+            status = "okay";
+            clock-frequency = <400000>;
+        };
+
+        i2c@41610000 {
+            status = "okay";
+            clock-frequency = <400000>;
+        };
+
+        i2c@41620000 {
+            status = "okay";
+            clock-frequency = <400000>;
+        };
+    };
+};

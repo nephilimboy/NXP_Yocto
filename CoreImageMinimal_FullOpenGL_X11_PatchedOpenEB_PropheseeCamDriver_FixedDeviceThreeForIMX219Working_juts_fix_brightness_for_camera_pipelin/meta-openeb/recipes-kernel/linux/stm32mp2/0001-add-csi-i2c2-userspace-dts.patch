@@ -1,0 +1,126 @@
+diff --git a/old/stm32mp251.dtsi b/new/stm32mp251.dtsi
+index 3b96ecc..c17f2e5 100644
+--- a/arch/arm64/boot/dts/st/stm32mp251.dtsi
++++ b/arch/arm64/boot/dts/st/stm32mp251.dtsi
+@@ -956,7 +956,7 @@
+ 				dma-names = "rx", "tx";
+ 				access-controllers = <&rifsc 41>;
+ 				power-domains = <&d1_pd>;
+-				status = "disabled";
++				status = "okay";
+ 			};
+ 
+ 			i2c2: i2c@40130000 {
+@@ -973,7 +973,7 @@
+ 				dma-names = "rx", "tx";
+ 				access-controllers = <&rifsc 42>;
+ 				power-domains = <&d1_pd>;
+-				status = "disabled";
++				status = "okay";
+ 			};
+ 
+ 			i2c3: i2c@40140000 {
+@@ -2203,7 +2203,7 @@
+ 					 <&rcc CK_KER_CSIPHY>;
+ 				clock-names = "pclk", "txesc", "csi2phy";
+ 				access-controllers = <&rifsc 86>;
+-				status = "disabled";
++				status = "okay";
+ 			};
+ 
+ 			dcmipp: dcmipp@48030000 {
+@@ -2215,7 +2215,7 @@
+ 				clock-names = "kclk", "mclk";
+ 				access-controllers = <&rifsc 87>;
+ 				power-domains = <&d1_pd>;
+-				status = "disabled";
++				status = "okay";
+ 			};
+ 
+ 			combophy: phy@480c0000 {
+diff --git a/old/stm32mp257f-dk.dts b/new/stm32mp257f-dk.dts
+index 88bafeb..92a091e 100644
+--- a/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
++++ b/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+@@ -226,20 +226,25 @@
+ };
+ 
+ &csi {
+-	vdd-supply =  <&scmi_vddcore>;
++	vdd-supply = <&scmi_vddcore>;
+ 	vdda18-supply = <&scmi_v1v8>;
+ 	status = "okay";
++
+ 	ports {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
++
++		/* CSI sink from camera sensor */
+ 		port@0 {
+ 			reg = <0>;
+ 			csi_sink: endpoint {
+-				remote-endpoint = <&imx335_ep>;
++				remote-endpoint = <&imx219_ep>;
+ 				data-lanes = <1 2>;
+-				bus-type = <4>;
++				bus-type = <4>; /* MIPI CSI-2 */
+ 			};
+ 		};
++
++		/* CSI source to DCMIPP capture pipeline */
+ 		port@1 {
+ 			reg = <1>;
+ 			csi_source: endpoint {
+@@ -251,6 +256,7 @@
+ 
+ &dcmipp {
+ 	status = "okay";
++
+ 	port {
+ 		dcmipp_0: endpoint {
+ 			remote-endpoint = <&csi_source>;
+@@ -338,23 +344,28 @@
+ 	/delete-property/dmas;
+ 	/delete-property/dma-names;
+ 
+-	imx335: camera@1a {
+-		compatible = "sony,imx335";
+-		reg = <0x1a>;
++	imx219: camera@10 {
++		compatible = "sony,imx219";
++		reg = <0x10>; /* fixed I2C address per datasheet */
+ 		clocks = <&clk_ext_camera>;
+-		avdd-supply = <&scmi_v3v3>;
+-		ovdd-supply = <&scmi_v3v3>;
+-		dvdd-supply = <&scmi_v3v3>;
+-		reset-gpios = <&gpiob 1 (GPIO_ACTIVE_LOW | GPIO_PUSH_PULL)>;
+-		powerdown-gpios = <&gpiob 11 (GPIO_ACTIVE_HIGH | GPIO_PUSH_PULL)>;
++		clock-names = "xvclk";
++		clock-frequency = <24000000>; /* IMX219 typically uses 24MHz */
++
++		VANA-supply = <&scmi_v3v3>;
++		VDIG-supply = <&scmi_v3v3>;
++		VDDL-supply = <&scmi_v3v3>;
++		reset-gpios = <&gpiob 1 GPIO_ACTIVE_HIGH>;
++		powerdown-gpios = <&gpiob 11 GPIO_ACTIVE_LOW>;
++
+ 		status = "okay";
+ 
+ 		port {
+-			imx335_ep: endpoint {
++			imx219_ep: endpoint {
+ 				remote-endpoint = <&csi_sink>;
+-				clock-lanes = <0>;
+ 				data-lanes = <1 2>;
+-				link-frequencies = /bits/ 64 <594000000>;
++				clock-lanes = <0>;
++				clock-noncontinuous;
++				link-frequencies = /bits/ 64 <456000000>;
+ 			};
+ 		};
+ 	};
+@@ -846,3 +857,4 @@
+ 		};
+ 	};
+ };
++

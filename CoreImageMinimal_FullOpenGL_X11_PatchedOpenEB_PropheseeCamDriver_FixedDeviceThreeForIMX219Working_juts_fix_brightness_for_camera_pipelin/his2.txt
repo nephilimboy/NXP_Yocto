@@ -1,0 +1,1000 @@
+  653  bitbake openeb
+  654  ls ../layers/meta-openeb/recipes-prophesee/openeb/openeb
+  655  ls ../layers/meta-openeb/recipes-prophesee/openeb
+  656  echo ""> ../layers/meta-openeb/recipes-prophesee/openeb/openeb/0001-disable-desktop-OpenGL.patch 
+  657  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb/0001-disable-desktop-OpenGL.patch 
+  658  bitbake openeb
+  659  cd ../layers/meta-openeb/
+  660  ls
+  661  cd recipes-
+  662  cd recipes-op
+  663  cd recipes-prophesee/
+  664  ls
+  665  cd openeb/
+  666  ls
+  667  rm -rf openeb
+  668  cat openeb.bb 
+  669  echo "" > openeb.bb 
+  670  nano  op
+  671  nano  openeb.
+  672  cd ../../../../build-openstlinuxweston-stm32mp2/
+  673  ls
+  674  bitbake -c cleanall openeb
+  675  bitbake openeb
+  676  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  677  bitbake openeb
+  678  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  679  bitbake openeb
+  680  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  681  bitbake openeb
+  682  bitbake -c cleanall openeb
+  683  bitbake openeb
+  684  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  685  bitbake openeb
+  686  bitbake -c cleanall openeb
+  687  bitbake openeb
+  688  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  689  bitbake openeb
+  690  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  691  bitbake openeb
+  692  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  693  bitbake openeb -c compile -f
+  694  bitbake -c cleanall openeb
+  695  bitbake openeb -f
+  696  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  697  bitbake openeb -f
+  698  bitbake -c cleanall openeb
+  699  bitbake -c cleanall openeb -c compile
+  700  bitbake openeb -f -c compile
+  701  bitbake -c cleanall openeb 
+  702  bitbake openeb -f -v
+  703  bitbake -c cleanall openeb 
+  704  bitbake openeb -f -v
+  705  bitbake openeb -f
+  706  nano conf/local.conf 
+  707  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  708  bitbake openeb -f
+  709  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  710  bitbake openeb -f
+  711  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  712  nano conf/local.conf 
+  713  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  714  bitbake openeb -f
+  715  bitbake -c cleanall openeb 
+  716  nano conf/local.conf 
+  717  bitbake -c cleanall openeb 
+  718  nano conf/local.conf 
+  719  bitbake-getvar DISTRO_FEATURES | grep x11
+  720  nano ../layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf 
+  721  bitbake openeb -f
+  722  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  723  nano conf/local.conf 
+  724  cat conf/local.conf 
+  725  nano conf/local.conf 
+  726  bitbake openeb -f
+  727  bitbake -c cleanall openeb 
+  728  bitbake openeb -f
+  729  nano conf/local.conf 
+  730  bitbake -c cleanall openeb 
+  731  nano conf/local.conf 
+  732  bitbake -c cleanall openeb 
+  733  bitbake openeb -f
+  734  nano conf/local.conf 
+  735  nano ../layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf 
+  736  bitbake openeb -f
+  737  nano conf/local.conf 
+  738  bitbake openeb -f
+  739  nano conf/local.conf 
+  740  echo "" > conf/local.conf 
+  741  nano conf/local.conf 
+  742  bitbake openeb -f
+  743  nano conf/local.conf 
+  744  bitbake openeb -f
+  745  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  746  nano conf/local.conf 
+  747  bitbake openeb -f
+  748  bitbake -c cleansstate glfw
+  749  bitbake-layers show-recipes glfw
+  750  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  751  bitbake openeb -f
+  752  echo "" > conf/local.conf 
+  753  nano conf/local.conf 
+  754  echo "" > ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  755  nano ../layers/meta-openeb/recipes-prophesee/openeb/openeb.bb 
+  756  nano conf/local.conf 
+  757  nano ../layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf 
+  758  bitbake core-image-minimal
+  759  nano conf/local.conf 
+  760  nano ../layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf 
+  761  bitbake openeb -f
+  762  history | grep weston
+  763  bitbake st-image-weston
+  764  nano conf/local.conf 
+  765  nano ../layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf 
+  766  nano conf/bblayers.conf 
+  767  cd ..
+  768  ls
+  769  cd layers/
+  770  git clone git://git.yoctoproject.org/poky.git
+  771  cd poky
+  772  ls
+  773  git checkout scarthgap
+  774  ls
+  775  cd ..
+  776  cd ../build-openstlinuxweston-stm32mp2/
+  777  ls
+  778  cd ..
+  779  cd layers/
+  780  cd poky/
+  781  pwd
+  782  cd ..
+  783  cd build-openstlinuxweston-stm32mp2/
+  784  nano conf/bblayers.conf 
+  785  bitbake-layers show-layers
+  786  nano conf/bblayers.conf 
+  787  bitbake-layers show-layers
+  788  cd ..
+  789  cd layers/poky/
+  790  ls
+  791  bitbake-layers add-layer -h
+  792  bitbake-layers add-layer  --priority 7 meta
+  793  bitbake-layers add-layer  meta
+  794  cd ..
+  795  ls
+  796  cd ..
+  797  cd build-openstlinuxweston-stm32mp2/
+  798  ls
+  799  nano conf/bblayers.conf 
+  800  bitbake-layers show-layers
+  801  nano conf/bblayers.conf 
+  802  cp conf/bblayers.conf ~/bblayers.conf
+  803  echo "" > conf/bblayers.conf 
+  804  nano conf/bblayers.conf 
+  805  bitbake-layers show-layers
+  806  nano conf/bblayers.conf 
+  807  bitbake-layers show-layers
+  808  nano conf/bblayers.conf 
+  809  bitbake-layers show-layers
+  810  cd conf/
+  811  rm -rf bblayers.conf 
+  812  cp ~/bblayers.conf ./
+  813  ls
+  814  cd ..
+  815  nano conf/bblayers.conf 
+  816  bitbake core-image-minimal
+  817  nano conf/local.conf 
+  818  bitbake core-image-minimal
+  819  rm -rf tmp-glibc/deploy/images/stm32mp2/FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+  820  nano ~/SDcardCommand.sh
+  821  cd tmp-glibc/deploy/images/stm32mp2/scripts/
+  822  ls
+  823  history | grep create_sdcard
+  824  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+  825  date
+  826  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_st-image-wes
+  827  ifconfig
+  828  cd ..
+  829  ls
+  830  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+  831  cd ..
+  832  ls
+  833  bitbake-layers show-layers
+  834  bitbake core-image-minimal
+  835  nano conf/local.conf 
+  836  bitbake core-image-minimal
+  837  nano conf/local.conf 
+  838  bitbake core-image-minimal
+  839  cd tmp-glibc/deploy/images/stm32mp2/scripts/
+  840  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+  841  cd Documents/AmirWorkSpace/
+  842  ls
+  843  cd YoctoStm32mp2/
+  844  ls
+  845  cd build-openstlinuxweston-stm32mp2/
+  846  ls
+  847  history | grep source
+  848  DISTRO=openstlinux-weston MACHINE=stm32mp2 source layers/meta-st/scripts/envsetup.sh
+  849  cd ..
+  850  DISTRO=openstlinux-weston MACHINE=stm32mp2 source layers/meta-st/scripts/envsetup.sh
+  851  ls
+  852  nano conf/local.conf 
+  853  bitbake core-image-minimal
+  854  cd tmp-glibc/deploy/images/stm32mp2/scripts/
+  855  histroy | grep sdb
+  856  history | grep sdb
+  857  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+  858  cd ../../../
+  859  cd ../..
+  860  ls
+  861  nano conf/local.conf 
+  862  bitbake st-image-core
+  863  nano conf/local.conf 
+  864  bitbake st-image-core
+  865  nano conf/local.conf 
+  866  bitbake st-image-core
+  867  nano conf/local.conf 
+  868  bitbake st-image-core
+  869  find ../layers/meta-openembedded/meta-oe -name "mesa-glu*.bb"
+  870  mkdir -p ../layers/meta-openeb/recipes-graphics/mesa/mesa-glu_9.0.2.bb
+  871  rm -rf ../layers/meta-openeb/recipes-graphics/mesa/mesa-glu_9.0.2.bb
+  872  nano ../layers/meta-openeb/recipes-graphics/mesa/mesa-glu_9.0.2.bb
+  873  bitbake mesa-glu
+  874  nano ../layers/meta-openeb/recipes-graphics/mesa/mesa-glu_9.0.2.bb
+  875  bitbake mesa-glu
+  876  cd ../layers/meta-openeb/
+  877  ls
+  878  rm -rf recipes-example/
+  879  rm -rf recipes-graphics/
+  880  ls
+  881  cd ..
+  882  cd build-openstlinuxweston-stm32mp2/
+  883  ls
+  884  nano conf/local.conf 
+  885  bitbake st-image-core
+  886  cat conf/local.conf 
+  887  bitbake-layers show-layers
+  888  cat conf/local.conf 
+  889  nano conf/local.conf 
+  890  bitbake core-image-minimal
+  891  cd tmp-glibc/deploy/images/stm32mp2/scripts/
+  892  history | grep sdb
+  893  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+  894  bitbake virtual/kernel -c menuconfig
+  895  sudo apt install xterm gnome-terminal tmux -y
+  896  bitbake virtual/kernel -c menuconfig
+  897  ls
+  898  cd ../../../../
+  899  cd ..
+  900  nano conf/local.conf 
+  901  bitbake core-image-minimal
+  902  bitbake core-image-base
+  903  bitbake virtual/kernel -c menuconfig
+  904  bitbake core-image-minimal
+  905  cd tmp-glibc/deploy/images/stm32mp2/scripts/
+  906  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+  907  sudo poweroff
+  908  sudo apt install openssh-server
+  909  sudo sysctl ssh start
+  910  sudo systemctl ssh start
+  911  sudo systemctl sshd start
+  912  sudo systemctl  start ssh
+  913  ls
+  914  cd Documents/AmirWorkSpace/ES_Test_Yocto_STM32MP2/
+  915  history | grep stm32
+  916  DISTRO=openstlinux-weston MACHINE=stm32mp2 source layers/meta-st/scripts/envsetup.sh
+  917  ls
+  918  history | grep weston
+  919  bitbake st-image-weston
+  920  bitbake -c clean python3_3.12.9
+  921  bitbake -c clean python3
+  922  bitbake st-image-weston
+  923  bitbake -c clean ffmpeg
+  924  bitbake st-image-weston
+  925  ifconfig
+  926  cd Documents/
+  927  ls
+  928  cd AmirWorkSpace/ES_Test_Yocto_STM32MP2/
+  929  ls
+  930  history | grep source
+  931  DISTRO=openstlinux-weston MACHINE=stm32mp2 source layers/meta-st/scripts/envsetup.sh
+  932  ls
+  933  cd ../layers/
+  934  ls
+  935  bitbake-layers create-layer meta-openeb
+  936  ls
+  937  bitbake-layers add-layer meta-openeb
+  938  bitbake-layers show-layers
+  939  cd openembedded-core/
+  940  ls
+  941  cd ../meta-openeb/
+  942  ls
+  943  rm -rf recipes-example/
+  944  mkdir recipes-openeb
+  945  mkdir openeb
+  946  ls
+  947  rm -rf openeb/
+  948  cd recipes-openeb/
+  949  mkdir openeb
+  950  cd openeb/
+  951  nano openeb_git.bb
+  952  cd ../../../../build-openstlinuxweston-stm32mp2/
+  953  ;s
+  954  ls
+  955  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  956  echo "" > ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  957  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  958  nano conf/local.conf 
+  959  cp conf/local.conf ../../../AmirWorkSpace/local.conf_orig
+  960  nano conf/local.conf 
+  961  bitbake openeb
+  962  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  963  bitbake openeb
+  964  echo "" > ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  965  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  966  bitbake openeb
+  967  bitbake openeb -c clean
+  968  bitbake openeb
+  969  nano conf/local.conf 
+  970  bitbake openeb
+  971  nano conf/local.conf 
+  972  bitbake openeb
+  973  bitbake openeb -c clean
+  974  bitbake openeb -f
+  975  bitbake openeb -c compile
+  976  nano conf/local.conf 
+  977  bitbake openeb -c compile
+  978  bitbake openeb -c clean
+  979  bitbake openeb -c compile
+  980  nano conf/local.conf 
+  981  bitbake openeb -c compile
+  982  nano conf/local.conf 
+  983  bitbake openeb -c compile
+  984  nano conf/local.conf 
+  985  bitbake openeb -c compile
+  986  nano conf/local.conf 
+  987  clear
+  988  nano conf/local.conf 
+  989  bitbake openeb -c compile
+  990  nano conf/local.conf 
+  991  bitbake openeb -c compile
+  992  nano conf/local.conf 
+  993  bitbake openeb -c compile
+  994  nano ../layers/meta-st/meta-st-stm32mp/conf/machine/stm32mp25-disco.conf 
+  995  nano ../layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf 
+  996  nano conf/local.conf 
+  997  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+  998  bitbake openeb -c compile
+  999  nano conf/local.conf 
+ 1000  bitbake openeb -c compile
+ 1001  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1002  bitbake openeb -c compile
+ 1003  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1004  cat conf/local.conf 
+ 1005  nano conf/local.conf 
+ 1006  bitbake openeb -c compile
+ 1007  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1008  bitbake openeb -c compile
+ 1009  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1010  bitbake openeb -c compile
+ 1011  bitbake openeb -c clean
+ 1012  bitbake openeb -c compile
+ 1013  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1014  nano conf/local.conf 
+ 1015  bitbake openeb -c compile
+ 1016  bitbake -c cleansstate openeb
+ 1017  bitbake -c cleansstate libgles2
+ 1018  bitbake -c cleansstate libegl
+ 1019  bitbake -c cleansstate mesa
+ 1020  bitbake openeb -c compile
+ 1021  bitbake x11 -c compile
+ 1022  nano conf/local.conf 
+ 1023  bitbake x11 -c compile
+ 1024  bitbake openeb -c compile
+ 1025  bitbake openeb -c clean
+ 1026  bitbake openeb -c compile
+ 1027  bitbake libglue -c clean
+ 1028  bitbake libglu -c clean
+ 1029  bitbake openeb -c compile
+ 1030  bitbake libglue -c clean
+ 1031  bitbake libglu -c clean
+ 1032  nano conf/local.conf 
+ 1033  bitbake openeb -c compile
+ 1034  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1035  bitbake openeb -c compile
+ 1036  nano conf/local.conf 
+ 1037  bitbake openeb -c compile
+ 1038  nano conf/local.conf 
+ 1039  nano ../layers/meta-openeb/recipes-openeb/openeb/openeb_git.bb 
+ 1040  nano conf/local.conf 
+ 1041  bitbake openeb -c compile
+ 1042  nano conf/local.conf 
+ 1043  bitbake openeb -c compile
+ 1044  bitbake extra-cmake-modules
+ 1045  sudo poweroff
+ 1046  df -h
+ 1047  ls
+ 1048  cd Documents/AmirWorkSpace/
+ 1049  ls
+ 1050  rm -rf local.conf_orig 
+ 1051  mkdir ES_Test_Yocto_Poky_STM32MP2
+ 1052  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1053  ls
+ 1054  python --version
+ 1055  git clone git://git.yoctoproject.org/poky.git
+ 1056  cd poky
+ 1057  git checkout  scarthgap
+ 1058  cd ..
+ 1059  git clone https://github.com/STMicroelectronics/meta-st-stm32mp.git
+ 1060  cd meta-st-stm32mp/
+ 1061  git checkout  scarthgap
+ 1062  cd ..
+ 1063  git clone https://github.com/openembedded/meta-openembedded.git
+ 1064  cd meta-openembedded/
+ 1065  git checkout  scarthgap
+ 1066  cd ..
+ 1067  source poky/oe-init-build-env 
+ 1068  ls
+ 1069  nano conf/local.conf 
+ 1070  nano ../../ES_Test_Yocto_STM32MP2/build-openstlinuxweston-stm32mp2/conf/local.conf 
+ 1071  nano conf/local.conf 
+ 1072  nano conf/bblayers.conf 
+ 1073  bitbake-layers show-layers
+ 1074  bitbake core-image-minimal
+ 1075  sudo reboot
+ 1076  cd Documents/AmirWorkSpace/ES_Test_Yocto_Poky_STM32MP2/
+ 1077  source poky/oe-init-build-env 
+ 1078  bitbake core-image-minimal
+ 1079  bitbake rust -c clean
+ 1080  bitbake core-image-minimal
+ 1081  nano conf/local.conf 
+ 1082  cd ..
+ 1083  ls
+ 1084  bitbake-layers create-layer meta-openeb
+ 1085  ls
+ 1086  bitbake-layers add-layer meta-openeb
+ 1087  ls
+ 1088  bitbake-layers show-layers
+ 1089  cd meta-openeb/
+ 1090  ls
+ 1091  rm -rf recipes-example/
+ 1092  mkdir recipes-openeb
+ 1093  cd recipes-openeb/
+ 1094  mkdir openeb
+ 1095  cd openeb/
+ 1096  nano openeb_git.bb
+ 1097  cd ../../../build/
+ 1098  ls
+ 1099  nano conf/local.conf 
+ 1100  bitbake openeb
+ 1101  bitbake protobuf -c clean
+ 1102  bitbake openeb
+ 1103  nano conf/local.conf 
+ 1104  history | grep minimal
+ 1105  bitbake core-image-minimal
+ 1106  cd tmp/deploy/images/stm32mp2/scripts/
+ 1107  ls
+ 1108  history | grep create_sdcard_from_flashlayout.sh
+ 1109  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1110  bitbake -c menuconfig virtual/kernel
+ 1111  cd ../../../..
+ 1112  ls
+ 1113  cd ..
+ 1114  ls
+ 1115  bitbake -c menuconfig virtual/kernel
+ 1116  bitbake core-image-minimal
+ 1117  cd tmp/deploy/images/stm32mp2/scripts/
+ 1118  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1119  exit
+ 1120  cd Documents/AmirWorkSpace/
+ 1121  ls
+ 1122  git ls-remote https://github.com/prophesee-ai/linux-sensor-drivers.git kernel-6.6
+ 1123  cd Documents/AmirWorkSpace/
+ 1124  cd ES_Test_Yocto_p
+ 1125  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1126  source poky/oe-init-build-env 
+ 1127  clear
+ 1128  bitbake-layers show layers
+ 1129  bitbake-layers show-layers
+ 1130  cat conf/local.conf 
+ 1131  cd ../meta-openeb/
+ 1132  ls
+ 1133  cd recipes-openeb/
+ 1134  cd openeb/
+ 1135  pwd
+ 1136  ls
+ 1137  cd ..
+ 1138  mkdir -p recipes-drivers/prophesee
+ 1139  cd recipes-drivers/prophesee/
+ 1140  nano linux-sensor-drivers_git.bb
+ 1141  cd ..
+ 1142  cd build/
+ 1143  ls
+ 1144  nano conf/local.conf 
+ 1145  bitbake linux-sensor-drivers
+ 1146  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1147  bitbake linux-sensor-drivers
+ 1148  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1149  bitbake linux-sensor-drivers
+ 1150  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1151  bitbake linux-sensor-drivers
+ 1152  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1153  bitbake linux-sensor-drivers
+ 1154  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1155  bitbake linux-sensor-drivers
+ 1156  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1157  bitbake linux-sensor-drivers
+ 1158  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1159  bitbake virtual/kernel -c prepare_kernel_source
+ 1160  bitbake kernel-devsrc
+ 1161  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1162  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1163  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1164  bitbake linux-sensor-drivers
+ 1165  nano conf/local.conf 
+ 1166  history | grep core
+ 1167  bitbake core-image-minimal
+ 1168  cat conf/local.conf 
+ 1169  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1170  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1171  bitbake core-image-minimal
+ 1172  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1173  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1174  bitbake core-image-minimal
+ 1175  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1176  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1177  bitbake core-image-minimal
+ 1178  bitbake linux-sensor-drivers -c clean
+ 1179  bitbake linux-sensor-drivers 
+ 1180  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1181  bitbake linux-sensor-drivers 
+ 1182  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1183  bitbake linux-sensor-drivers 
+ 1184  cat conf/local.conf 
+ 1185  bitbake core-image-minimal
+ 1186  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1187  cat ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1188  bitbake -c cleansstate linux-sensor-drivers
+ 1189  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1190  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1191  bitbake linux-sensor-drivers 
+ 1192  bitbake core-image-minimal
+ 1193  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1194  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1195  bitbake core-image-minimal
+ 1196  nano conf/local.conf 
+ 1197  bitbake core-image-minimal
+ 1198  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1199  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1200  bitbake core-image-minimal
+ 1201  bitbake -c cleansstate linux-sensor-drivers
+ 1202  bitbake core-image-minimal
+ 1203  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1204  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1205  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1206  bitbake core-image-minimal
+ 1207  bitbake -e linux-sensor-drivers | grep ^PACKAGES
+ 1208  bitbake -c listtasks linux-sensor-drivers
+ 1209  bitbake -e linux-sensor-drivers | grep ^PACKAGES
+ 1210  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1211  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1212  bitbake core-image-minimal
+ 1213  bitbake -c cleansstate linux-sensor-drivers
+ 1214  bitbake core-image-minimal
+ 1215  bitbake -c cleansstate linux-sensor-drivers
+ 1216  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1217  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1218  bitbake -c cleansstate linux-sensor-drivers
+ 1219  bitbake core-image-minimal
+ 1220  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1221  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1222  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1223  bitbake -c cleansstate linux-sensor-drivers
+ 1224  bitbake core-image-minimal
+ 1225  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1226  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1227  bitbake core-image-minimal
+ 1228  bitbake -c cleansstate linux-sensor-drivers
+ 1229  bitbake core-image-minimal
+ 1230  bitbake -c cleansstate linux-sensor-drivers
+ 1231  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1232  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1233  bitbake core-image-minimal
+ 1234  bitbake -c cleansstate linux-sensor-drivers
+ 1235  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1236  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1237  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1238  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1239  bitbake -c cleansstate linux-sensor-drivers
+ 1240  bitbake core-image-minimal
+ 1241  echo "" >  ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1242  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1243  bitbake -c cleansstate linux-sensor-drivers
+ 1244  bitbake core-image-minimal
+ 1245  cd tmp/deploy/images/stm32mp2/scripts/
+ 1246  history | grep sdb
+ 1247  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1248  cd ..
+ 1249  ls | grep .raw
+ 1250  ls -l | grep .raw
+ 1251  cd scripts/
+ 1252  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1253  cd Documents/AmirWorkSpace/ES_Test_Yocto_p
+ 1254  cd Documents/AmirWorkSpace/ES_Test_Yocto_Poky_STM32MP2/
+ 1255  source poky/oe-init-build-env 
+ 1256  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1257  echo "" > ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1258  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1259  bitbake linux-sensor-drivers -c cleansstats
+ 1260  bitbake linux-sensor-drivers -c cleansstate
+ 1261  bitbake core-image-minimal
+ 1262  cd tmp/deploy/images/stm32mp2/scripts/
+ 1263  history | grep sdb
+ 1264  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1265  cd ../../../..
+ 1266  cd ..
+ 1267  nano conf/local.conf 
+ 1268  bitbake core-image-minimal
+ 1269  bitbake linux-sensor-drivers -c cleansstats
+ 1270  bitbake linux-sensor-drivers -c cleansstate
+ 1271  bitbake core-image-minimal
+ 1272  rm -rf tmp/deploy/images/stm32mp2/FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1273  cd tmp/deploy/images/stm32mp2/scripts/
+ 1274  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1275  cd ..
+ 1276  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1277  cd ../../../../
+ 1278  ls
+ 1279  nano conf/local.conf 
+ 1280  bitbake -c cleansstate core-image-minimal
+ 1281  bitbake -c cleansstate linux-sensor-drivers
+ 1282  bitbake -c clean core-image-minimal
+ 1283  bitbake core-image-minimal
+ 1284  cd tmp/deploy/images/stm32mp2/scripts/
+ 1285  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1286  cd ..
+ 1287  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1288  cd ../../../../
+ 1289  ls
+ 1290  nano conf/local.conf 
+ 1291  bitbake -c clean core-image-minimal
+ 1292  bitbake core-image-minimal
+ 1293  cd tmp/deploy/images/stm32mp2/scripts/
+ 1294  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1295  cd ..
+ 1296  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1297  cd ..
+ 1298  cd ../../../..
+ 1299  cd build/
+ 1300  ls
+ 1301  nano conf/local.conf 
+ 1302  nano ../meta-openeb/recipes-drivers/prophesee/linux-sensor-drivers_git.bb 
+ 1303  nano conf/local.conf 
+ 1304  bitbake core-image-minimal
+ 1305  cd tmp/deploy/images/stm32mp2/scripts/
+ 1306  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1307  ifconfig
+ 1308  cd ../../../..
+ 1309  cd ..
+ 1310  ls
+ 1311  nano conf/local.conf 
+ 1312  cd tmp/deploy/images/stm32mp2/scripts/
+ 1313  cd ..
+ 1314  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1315  cd ../../../
+ 1316  cd ..
+ 1317  nano conf/local.conf 
+ 1318  bitbake core-image-minimal
+ 1319  cd tmp/deploy/images/stm32mp2/scripts/
+ 1320  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1321  history | grep menu
+ 1322  bitbake -c menuconfig virtual/kernel
+ 1323  cd ..
+ 1324  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1325  cd ../../../..
+ 1326  find . -name "*mp25*dk*.dts"
+ 1327  clear
+ 1328  find . -name "*mp25*dk*.dts"
+ 1329  nano ./tmp/work/stm32mp2-poky-linux/tf-a-stm32mp/v2.10.13-stm32mp-r2/build/optee-programmer-usb-stm32mp25-stm32mp257f-dk/fdts/stm32mp257f-dk-bl31.dts
+ 1330  find . -name "stm32mp257f-dk.dts"
+ 1331  nano ./tmp/work-shared/stm32mp2/uboot-source/arch/arm/dts/stm32mp257f-dk.dts
+ 1332  poweroff
+ 1333  sudo poweroff
+ 1334  cd Documents/AmirWorkSpace/ES_Test_Yocto_Poky_STM32MP2/
+ 1335  ls
+ 1336  source poky/oe-init-build-env 
+ 1337  ls
+ 1338  clear
+ 1339  ls tmp/deploy/images/stm32mp2/
+ 1340  ls tmp/deploy/images/stm32mp2/devicetree/
+ 1341  nano tmp/deploy/images/stm32mp2/u-boot/u-boot-stm32mp257f-dk-default.dtb
+ 1342  sudo poweroff
+ 1343  cd Documents/AmirWorkSpace/ES_Test_Yocto_Poky_STM32MP2/
+ 1344  source poky/oe-init-build-env 
+ 1345  ls
+ 1346  ls ../meta-st-stm32mp/
+ 1347  cp tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts ~/Documents/AmirWorkSpace/stm32mp257f-dk.dts
+ 1348  nano tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1349  cat tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1350  nano tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1351  echo "" >  tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1352  nano tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1353  bitbake -c cleanall virtual/kernel
+ 1354  bitbake virtual/kernel
+ 1355  bitbake virtual/kernel -c menuconfig
+ 1356  bitbake core-image-minimal
+ 1357  cat tmp/deploy/images/stm32mp2/u-boot/u-boot-stm32mp257f-dk-default.dtb 
+ 1358  cd tmp/deploy/images/stm32mp2/
+ 1359  ls
+ 1360  cd scripts/
+ 1361  history | grep sdb
+ 1362  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1363  histroy | grep find
+ 1364  history | grep find
+ 1365  cd ..
+ 1366  find . -name "*mp25*dk*.dts"
+ 1367  find . -name "*mp25*dk*.dtsb"
+ 1368  find . -name "*mp25*dk*.dtb"
+ 1369  nancd ../..
+ 1370  cd ../..
+ 1371  ls
+ 1372  nano tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts 
+ 1373  sudo poweroff
+ 1374  cd Documents/AmirWorkSpace/ES_Test_Yocto_STM32MP2/
+ 1375  ls
+ 1376  cd build-openstlinuxweston-stm32mp2/
+ 1377  ls
+ 1378  ls tmp-glibc/work/stm32mp2-ostl-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi 
+ 1379  nano tmp-glibc/work/stm32mp2-ostl-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi
+ 1380  grep -R "status = \"okay\";" arch/arm64/boot/dts/st/stm32mp251.dtsi
+ 1381  grep -R "imx219" arch/arm64/boot/dts/st
+ 1382  exit
+ 1383  ls
+ 1384  cd Documents/AmirWorkSpace/ES_Test_Yocto_Poky_STM32MP2/
+ 1385  source poky/oe-init-build-env 
+ 1386  cd ..
+ 1387  cd meta-st-stm32mp/
+ 1388  ls
+ 1389  history | grep dsi
+ 1390  history | grep dti
+ 1391  history | grep dts
+ 1392  find . -name "*mp25*dk*.dtsb"
+ 1393  find . -name "*mp25*dk*.dts"
+ 1394  find . -name "*mp25*dk*.dts*"
+ 1395  cd ..
+ 1396  ls
+ 1397  cd meta-openembedded/
+ 1398  find . -name "*mp25*dk*.dts*"
+ 1399  find . -name "*mp25*dk*.dts"
+ 1400  cd ..
+ 1401  cd poky/
+ 1402  find . -name "*mp25*dk*.dts"
+ 1403  cd ..
+ 1404  find . -name "*mp25*dk*.dts"
+ 1405  cd ..
+ 1406  ls
+ 1407  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1408  ls ../
+ 1409  cd ../..
+ 1410  ls
+ 1411  cd AmirWorkSpace/
+ 1412  LS
+ 1413  ls
+ 1414  tar -xf FLASH-stm32mp2-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar 
+ 1415  ls
+ 1416  cd stm32mp2-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/
+ 1417  ls
+ 1418  cd images/stm32mp2/scripts/
+ 1419  history | grep sdb
+ 1420  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_st-image-weston/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1421  cd ../../
+ 1422  ls
+ 1423  cd ../../
+ 1424  ls
+ 1425  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1426  ;s
+ 1427  source poky/oe-init-build-env 
+ 1428  ls
+ 1429  find . -name "*mp25*dk*.dts"
+ 1430  ls tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/
+ 1431  ls tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/
+ 1432  nano tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dt
+ 1433  nano tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts 
+ 1434  ls ~/Documents/AmirWorkSpace/
+ 1435  rm -rf ~/Documents/AmirWorkSpace/stm32mp257f-dk.dts 
+ 1436  cp tmp/work-shared/stm32mp2/kernel-source/arch/arm64/boot/dts/st/stm32mp257f-dk.dts ~/Documents/AmirWorkSpace/
+ 1437  cd ~/Documents/AmirWorkSpace/
+ 1438  ls
+ 1439  cp stm32mp257f-dk.dts stm32mp257f-dk.dts.orig
+ 1440  echo "" > stm32mp257f-dk.dts
+ 1441  nano stm32mp257f-dk.dts
+ 1442  git diff --no-index stm32mp257f-dk.dts.orig stm32mp257f-dk.dts > 0001-add-csi-i2c2-userspace-dts.patch
+ 1443  cat 0001-add-csi-i2c2-userspace-dts.patch 
+ 1444  ls
+ 1445  cp stm32mp257f-dk.dts stm32mp257f-dk_imx219.dts
+ 1446  echo "" > stm32mp257f-dk_imx219.dts 
+ 1447  nano stm32mp257f-dk_imx219.dts 
+ 1448  rm -rf 0001-add-csi-i2c2-userspace-dts.patch 
+ 1449  git diff --no-index stm32mp257f-dk.dts.orig stm32mp257f-dk_imx219.dts > 0001-add-csi-i2c2-userspace-dts.patch
+ 1450  cat 0001-add-csi-i2c2-userspace-dts.patch 
+ 1451  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1452  cd meta-opene
+ 1453  cd meta-openeb/
+ 1454  ls
+ 1455  mkdir recipes-kernel/linux/stm32mp2/
+ 1456  mkdir -p recipes-kernel/linux/stm32mp2/
+ 1457  cp ../../0001-add-csi-i2c2-userspace-dts.patch recipes-kernel/linux/stm32mp2/
+ 1458  cd ..
+ 1459  source poky/oe-init-build-env 
+ 1460  oe-pkgdata-util lookup-recipe kernel
+ 1461  cd ..
+ 1462  cd meta-openeb/
+ 1463  ls recipes-kernel/linux/stm32mp2/
+ 1464  nano recipes-kernel/linux/linux-stm32mp_%.bbappend
+ 1465  cd ../build/
+ 1466  bitbake -c menuconfig busybox
+ 1467  nano ../meta-openeb/recipes-kernel/linux/linux-stm32mp_%.bbappend
+ 1468  bitbake -c menuconfig busybox
+ 1469  nano ../meta-openeb/recipes-kernel/linux/linux-stm32mp_%.bbappend
+ 1470  bitbake -c menuconfig busybox
+ 1471  bitbake -c cleanall virtual/kernel
+ 1472  bitbake virtual/kernel -c menuconfig
+ 1473  cd ..
+ 1474  ls
+ 1475  mv stm32mp257f-dk.dts stm32mp257f-dk.dts_prophesee
+ 1476  mv stm32mp257f-dk_imx219.dts stm32mp257f-dk.dts
+ 1477  git diff --no-index stm32mp257f-dk.dts.orig stm32mp257f-dk.dts > 0001-add-csi-i2c2-userspace-dts.patch
+ 1478  cp 0001-add-csi-i2c2-userspace-dts.patch ES_Test_Yocto_Poky_STM32MP2/meta-openeb/recipes-kernel/linux/stm32mp2/
+ 1479  cd ES_Test_Yocto_Poky_STM32MP2/build/
+ 1480  bitbake virtual/kernel -c menuconfig
+ 1481  nano ../meta-openeb/recipes-kernel/linux/linux-stm32mp_%.bbappend
+ 1482  ls tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/
+ 1483  cd ..
+ 1484  ls
+ 1485  cp ../stm32mp257f-dk.dts build/tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts.new
+ 1486  git diff --no-index build/tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts build/tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts.new > 0001-add-csi-i2c2-userspace-dts.patch
+ 1487  ls
+ 1488  mv 0001-add-csi-i2c2-userspace-dts.patch meta-openeb/recipes-kernel/linux/stm32mp2/
+ 1489  ls meta-openeb/recipes-kernel/linux/stm32mp2/
+ 1490  cd build/
+ 1491  bitbake virtual/kernel -c menuconfig
+ 1492  nano ../meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1493  bitbake virtual/kernel -c menuconfig
+ 1494  nano ../meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1495  bitbake virtual/kernel -c menuconfig
+ 1496  bitbake core-image-minimal
+ 1497  ls
+ 1498  ls /build/tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/
+ 1499  ls tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257
+ 1500  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts 
+ 1501  cat conf/local.conf 
+ 1502  nano conf/local.conf 
+ 1503  bitbake core-image-minimal
+ 1504  bitbake-layers show-recipes | grep libcamera
+ 1505  bitbake-layers show-layers
+ 1506  nano conf/local.conf 
+ 1507  bitbake core-image-minimal
+ 1508  cd tmp/deploy/images/stm32mp2/scripts/
+ 1509  history | grep sdb
+ 1510  cd ..
+ 1511  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1512  cd scripts/
+ 1513  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1514  cd ../../../..
+ 1515  cd ..
+ 1516  nano ../meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1517  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1518  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257.dtsi
+ 1519  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp25xf.dtsi 
+ 1520  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp25-pinctrl.dtsi 
+ 1521  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp25xxak-pinctrl.dtsi 
+ 1522  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk-ca35tdcid-resmem.dtsi 
+ 1523  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts
+ 1524  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257.dtsi 
+ 1525  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi 
+ 1526  bitbake virtual/kernel -c menuconfig
+ 1527  history | diff
+ 1528  history | grep diff
+ 1529  cd ../..
+ 1530  ls
+ 1531  mkdir new
+ 1532  mkdir old
+ 1533  cp stm32mp257f-dk.dts.orig old/stm32mp257f-dk.dts
+ 1534  cp stm32mp257f-dk.dts new/stm32mp257f-dk.dts
+ 1535  cp ES_Test_Yocto_Poky_STM32MP2/build/tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi ~/Documents/AmirWorkSpace/old/
+ 1536  cp ES_Test_Yocto_Poky_STM32MP2/build/tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi ~/Documents/AmirWorkSpace/new/
+ 1537  cd new/
+ 1538  nano stm32mp251.dtsi 
+ 1539  cd ..
+ 1540  ls
+ 1541  rm -rf 0001-add-csi-i2c2-userspace-dts.patch 
+ 1542  git diff --no-index old/ new/ > 0001-add-csi-i2c2-userspace-dts.patch
+ 1543  nano 0001-add-csi-i2c2-userspace-dts.patch 
+ 1544  nano ES_Test_Yocto_Poky_STM32MP2/meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1545  nano 0001-add-csi-i2c2-userspace-dts.patch 
+ 1546  rm -rf ES_Test_Yocto_Poky_STM32MP2/meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch
+ 1547  cp 0001-add-csi-i2c2-userspace-dts.patch ES_Test_Yocto_Poky_STM32MP2/meta-openeb/recipes-kernel/linux/stm32mp2/
+ 1548  nano ES_Test_Yocto_Poky_STM32MP2/meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch
+ 1549  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1550  ls
+ 1551  cd build/
+ 1552  bitbake core-image-minimal
+ 1553  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi
+ 1554  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts 
+ 1555  cd tmp/deploy/images/stm32mp2/scripts/
+ 1556  ls
+ 1557  cd ..
+ 1558  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1559  cd scripts/
+ 1560  history | grep sdb
+ 1561  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1562  cd ..
+ 1563  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1564  cd ../../../..
+ 1565  ls
+ 1566  bitbake -c menuconfig viryal/kernel
+ 1567  bitbake -c menuconfig virtual/kernel
+ 1568  bitbake core-image-minimal
+ 1569  ##
+ 1570  sudo apt install device-tree-compiler
+ 1571  ls
+ 1572  dtc -I dtb -O dts -o stm32mp257f.dts tmp/deploy/images/stm32mp2/u-boot/u-boot-stm32mp257f-dk-default.dtb
+ 1573  ls
+ 1574  nano stm32mp257f.dts 
+ 1575  dtc -I dtb -O dts -o stm32mp257f.dts tmp/deploy/images/stm32mp2/u-boot/u-boot-stm32mp257f-dk-fastboot-sdcard.dtb 
+ 1576  nano stm32mp257f.dts 
+ 1577  nano tmp/deploy/images/stm32mp2/scripts/create_sdcard_from_flashlayout.sh 
+ 1578  history | grep sdb
+ 1579  nano tmp/deploy/images/stm32mp2/flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv
+ 1580  ls -a tmp/deploy/images/stm32mp2
+ 1581  cat ../meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1582  bitbake -c cleanall linux-stm32mp
+ 1583  bitbake linux-stm32mp
+ 1584  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp257f-dk.dts 
+ 1585  nano tmp/work/stm32mp2-poky-linux/linux-stm32mp/6.6.78-stm32mp-r2/linux-6.6.78/arch/arm64/boot/dts/st/stm32mp251.dtsi 
+ 1586  ls
+ 1587  rm -rf stm32mp257f.dts 
+ 1588  ls
+ 1589  rm -rf tmp/deploy/images/stm32mp2/u-boot
+ 1590  cd tmp/deploy/images/stm32mp2/
+ 1591  ls
+ 1592  history | grep find
+ 1593  find . -name "*mp25*dk*.dtb"
+ 1594  cd ../../
+ 1595  cd ../..
+ 1596  bitbake core-image-minimal
+ 1597  history | grep sdb
+ 1598  nano tmp/deploy/images/stm32mp2/flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv
+ 1599  cat tmp/deploy/images/stm32mp2/flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv
+ 1600  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/arm-trusted-firmware/fwconfig/stm32mp257f-dk-fw-config-optee-sdcard.dtb > stm32mp257f-dk.dts
+ 1601  nano stm32mp257f-dk.dts 
+ 1602  rm -rf stm32mp257f-dk.dts 
+ 1603  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/kernel/stm32mp257f-dk.dtb > stm32mp257f-dk.dts
+ 1604  rm -rf stm32mp257f-dk.dts 
+ 1605  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/kernel/stm32mp257f-dk.dtb > stm32mp257f-dk.dts
+ 1606  nano stm32mp257f-dk.dts 
+ 1607  cd tmp/deploy/images/stm32mp2/scripts/
+ 1608  DEVICE=sdb ./create_sdcard_from_flashlayout.sh ../flashlayout_core-image-minimal/optee/FlashLayout_sdcard_stm32mp257f-dk-optee.tsv 
+ 1609  cd ..
+ 1610  rm -rf FlashLayout_sdcard_stm32mp257f-dk-optee.raw 
+ 1611  cd ../../../..
+ 1612  ls
+ 1613  nano stm32mp257f-dk.dts 
+ 1614  rm -rf stm32mp257f-dk.dts 
+ 1615  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/devicetree/stm32mp215f-dk-m2-bcm43xx-2ae.dtbo > stm32mp257f-dk.dts
+ 1616  nano stm32mp257f-dk.dts 
+ 1617  ls -a tmp/deploy/images/stm32mp2/devicetree/
+ 1618  nano stm32mp257f-dk.dts 
+ 1619  ls -a tmp/deploy/images/stm32mp2
+ 1620  ls -a tmp/deploy/images/stm32mp2/arm-trusted-firmware
+ 1621  ls -a tmp/deploy/images/stm32mp2/arm-trusted-firmware/fwconfig/
+ 1622  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/arm-trusted-firmware/fwconfig/stm32mp257f-dk-fw-config-optee-sdcard.dtb > stm32mp257f-dk.dts
+ 1623  nano stm32mp257f-dk.dts 
+ 1624  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/arm-trusted-firmware/fwconfig/stm32mp257f-dk-fw-config-optee-programmer-usb.dtb > stm32mp257f-dk.dts
+ 1625  nano stm32mp257f-dk.dts 
+ 1626  dtc -I dtb -O dts tmp/deploy/images/stm32mp2/arm-trusted-firmware/bl31/stm32mp257f-dk-bl31-optee-sdcard.dtb > stm32mp257f-dk.dts
+ 1627  nano stm32mp257f-dk.dts 
+ 1628  nano ../meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1629  cat ../meta-openeb/recipes-kernel/linux/stm32mp2/0001-add-csi-i2c2-userspace-dts.patch 
+ 1630  bitbake -c devshell linux-stm32mp
+ 1631  history | grep apt
+ 1632  ls tmp/deploy/images/stm32mp2/
+ 1633  ls tmp/deploy/images/stm32mp2/optee/
+ 1634  ls -a tmp/deploy/images/stm32mp2/
+ 1635  ls -a tmp/deploy/images/stm32mp2/flashlayout_core-image-minimal/
+ 1636  sudo poweroff
+ 1637  ls
+ 1638  cd Documents/AmirWorkSpace/
+ 1639  ls
+ 1640  cd ES_Test_Yocto_STM32MP2/
+ 1641  ls
+ 1642  cd build-openstlinuxweston-stm32mp2/
+ 1643  cd ..
+ 1644  history | grep DISTRO=openstlinux-weston
+ 1645  DISTRO=openstlinux-weston MACHINE=stm32mp2 source layers/meta-st/scripts/envsetup.sh
+ 1646  ls
+ 1647  bitbake -c menuconfig virtual/kernel
+ 1648  cd ..
+ 1649  cd ES_Test_Yocto_Poky_STM32MP2/
+ 1650  source poky/oe-init-build-env 
+ 1651  bitbake -c menuconfig virtual/kernel
+ 1652  history > ~/Documents/AmirWorkSpace/his2.txt

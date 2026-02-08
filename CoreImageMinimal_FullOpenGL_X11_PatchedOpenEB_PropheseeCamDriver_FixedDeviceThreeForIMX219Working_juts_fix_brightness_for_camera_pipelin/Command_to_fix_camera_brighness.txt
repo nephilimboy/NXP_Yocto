@@ -1,0 +1,80 @@
+
+################################################### Running Camera History #########################
+    1  gst-launch-1.0 v4l2src device=/dev/video5 io-mode=dmabuf ! 'video/xraw,
+    2  format=UYVY,width=1280,height=960' ! vspfilter ! video/x-raw,format=BGRA ! waylandsink
+    3  gst-launch-1.0 v4l2src device=/dev/video5 io-mode=dmabuf ! 'video/xraw,
+    4  format=UYVY,width=1280,height=960' ! vspfilter ! video/x-raw,format=BGRA ! waylandsink
+    5  gst-launch-1.0 v4l2src device=/dev/video5 io-mode=dmabuf ! 'video/xraw,
+    6  format=UYVY,width=1280,height=960' ! vspfilter ! video/x-raw,format=BGRA ! waylandsink
+    7  gst-launch-1.0 v4l2src device=/dev/video5 io-mode=dmabuf ! 'video/xraw,
+    8  format=UYVY,width=1280,height=960' ! capsfilter ! video/x-raw,format=BGRA ! waylandsink
+    9  gst-launch-1.0 v4l2src device=/dev/video5 io-mode=dmabuf ! 'video/xraw,
+   10  format=UYVY,width=1280,height=960' ! capsfilter ! video/x-raw,format=BGRA ! filesink location=test.jpg
+   11  gst-launch-1.0 -v v4l2src device=/dev/video5 ! image/jpeg, width=640, height=480, framerate=60/1, format=MJPG ! jpegdec ! filesink location=test.jpg
+   12  gst-launch-1.0 -v v4l2src device=/dev/video5 ! image/jpeg, framerate=60/1, format=MJPG ! jpegdec ! filesink location=test.jpg
+   13  gst-launch-1.0 v4l2src device=/dev/video5 ! jpegenc ! filesink location=test.jpg
+   14  gst-launch-1.0 v4l2src device=/dev/video0 ! jpegenc ! filesink location=test.jpg
+   15  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video4 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   16  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video5 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   17  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video2 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   18  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video1 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   19  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video0 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   20  rm -rf test.jpg
+   21  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video0 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   22  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video5 ! video/x-raw,format=UYVY ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   23  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video5 ! video/x-raw,format=UYVY,width=1920,height=1080 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   24  gst-launch-1.0 v4l2src num-buffers=1 device=/dev/video5 ! video/x-raw,format=UYVY,width=640,height=460 ! videoconvert ! jpegenc ! multifilesink location=test.jpg
+   25  media-ctl -d /dev/media1 -p
+   26  v4l2-ctl -d /dev/video1 -D
+   27  i2cdetect -y 1
+   28  v4l2-ctl --list-devices
+   29  media-ctl -d platform:48030000.dcmipp -p
+   30  media-ctl -d platform:48030000.dcmipp --print-dot > graph.dot
+   31  ls
+   32  media-ctl -d platform:48030000.dcmipp -r
+   33  media-ctl -d platform:48030000.dcmipp -l '"48020000.csi":1->"dcmipp_input":0[1]'
+   34  media-ctl -d platform:48030000.dcmipp -l "'dcmipp_input':2->'dcmipp_main_isp':0[1]"
+   35  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'imx335 0-001a':0[fmt:SRGGB10_1X10/3280x2464]"
+   36  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'imx219 1-0010':0[fmt:SRGGB10_1X10/3280x2464]"
+   37  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'48020000.csi':1[fmt:SRGGB10_1X10/3280x2464]"
+   38  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'dcmipp_input':2[fmt:SRGGB10_1X10/3280x2464 field:none]"
+   39  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'dcmipp_main_isp':1[fmt:RGB888_1X24/3280x2464 field:none]"
+   40  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'dcmipp_main_postproc':0[compose:(0,0)/640x480]"
+   41  media-ctl -d platform:48030000.dcmipp --set-v4l2 "'dcmipp_main_postproc':1[fmt:RGB888_1X24/640x480]"
+   42  export main_capture_dev=$(media-ctl -d "platform:48030000.dcmipp" -e "dcmipp_main_capture")
+   43  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! waylandsink fullscreen=true
+   44  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   45  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   46  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   47  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   48  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   49  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   50  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   51  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   52  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   53  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   54  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! videoconvert ! jpegenc ! filesink location=test.jpg
+   55  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   56  v4l2-ctl -d $main_capture_dev -c exposure_auto=1
+   57  v4l2-ctl -d $main_capture_dev --list-ctrls
+   58  v4l2-ctl -d $main_capture_dev --all
+   59  media-ctl -d /dev/media1 -p
+   60  v4l2-ctl -d /dev/v4l-subdev7 --list-ctrls
+   61  v4l2-ctl -d /dev/v4l-subdev7 -c exposure=3500
+   62  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   63  v4l2-ctl -d /dev/v4l-subdev7 -c analogue_gain=100
+   64  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   65  v4l2-ctl -d /dev/v4l-subdev7 -c analogue_gain=232
+   66  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   67  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   68  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   69  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   70  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   71  gst-launch-1.0 v4l2src device=$main_capture_dev ! video/x-raw, format=RGB16, width=640,height=480, framerate=30/1 ! queue ! videoconvert ! jpegenc ! filesink location=test.jpg
+   72  history
+
+
+
+
+
+   dot -y -Tpng -Nfontname=Roboto -Nfontsize=8 -Efontname=Roboto -Efontsize=10 graph.dot -LO > graph.png
