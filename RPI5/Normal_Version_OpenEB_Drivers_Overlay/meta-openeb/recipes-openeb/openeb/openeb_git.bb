@@ -10,9 +10,6 @@ S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig python3native
 
-# ----------------------------
-# Dependencies
-# ----------------------------
 DEPENDS = "\
     cmake-native \
     ninja-native \
@@ -39,9 +36,6 @@ RDEPENDS:${PN} += "python3-core python3-modules libpython3 opencv"
 
 PYTHON_BASEVERSION = "3.12"
 
-# ----------------------------
-# Remove problematic compiler flags
-# ----------------------------
 TARGET_CFLAGS:remove = "-Werror=type-limits"
 TARGET_CFLAGS:remove = "-Werror=sign-compare"
 TARGET_CXXFLAGS:remove = "-Werror=type-limits"
@@ -51,9 +45,6 @@ SECURITY_CXXFLAGS:remove = "-Werror"
 
 CXXFLAGS:append = " -std=c++17 -fPIC"
 
-# ----------------------------
-# FIXED: Python / CMake cross-build
-# ----------------------------
 EXTRA_OECMAKE = " \
     -DUSE_OPENGL_ES3=ON \
     -DCMAKE_VERBOSE_MAKEFILE=ON \
@@ -102,7 +93,6 @@ EXTRA_OECMAKE = " \
     -DCMAKE_SYSTEM_PROCESSOR=cortex-a7 \
 "
 
-# FIX: Enable HAL plugins for RAW file support
 EXTRA_OECMAKE:append = " \
     -DBUILD_HAL_PSEE_PLUGINS=ON \
     -DBUILD_HAL_PLUGIN_GEN3_FX3=ON \
@@ -113,11 +103,7 @@ EXTRA_OECMAKE:append = " \
     -DBUILD_HAL_PLUGIN_USB=ON \
 "
 
-# ----------------------------
-# FIX: Force protoc path and create wrapper if needed
-# ----------------------------
 do_configure:prepend() {
-    # Ensure Python shared library exists
     PY_LIB="${STAGING_LIBDIR}/libpython${PYTHON_BASEVERSION}.so"
     if [ ! -e "$PY_LIB" ]; then
         alt_lib=$(find ${STAGING_LIBDIR} -maxdepth 1 -name "libpython${PYTHON_BASEVERSION}*.so" | head -n 1)
@@ -130,7 +116,6 @@ do_configure:prepend() {
         fi
     fi
 
-    # Find the actual protoc binary
     PROTOC_BIN=$(find ${STAGING_DIR_NATIVE} -name protoc -type f 2>/dev/null | head -n1)
     if [ -z "$PROTOC_BIN" ]; then
         PROTOC_BIN=$(which protoc 2>/dev/null || true)
@@ -147,9 +132,6 @@ do_configure:prepend() {
     fi
 }
 
-# ----------------------------
-# FIX: Patch CMake files to use absolute path instead of target
-# ----------------------------
 do_configure:append() {
     find ${B} -name "*.make" -o -name "build.ninja" | xargs sed -i 's|protobuf::protoc|${STAGING_BINDIR_NATIVE}/protoc|g' || true
     find ${B} -name "CMakeCache.txt" | xargs sed -i 's|protobuf::protoc|${STAGING_BINDIR_NATIVE}/protoc|g' || true
@@ -159,9 +141,6 @@ do_configure:append() {
     fi
 }
 
-# ----------------------------
-# FIX: Ensure protoc is available during compile
-# ----------------------------
 do_compile:prepend() {
     export PATH="${STAGING_BINDIR_NATIVE}:${PATH}"
     export PROTOC="${STAGING_BINDIR_NATIVE}/protoc"
@@ -174,14 +153,10 @@ do_compile:prepend() {
     fi
 }
 
-# ----------------------------
-# FIXED: Install libraries and handle duplicates properly
-# ----------------------------
 do_install() {
     install -d ${D}${bindir}
     install -d ${D}${libdir}
 
-    # Install all binaries EXCEPT protoc (which is a host tool)
     if [ -d "${B}/bin" ]; then
         for f in ${B}/bin/*; do
             if [ -f "$f" ] && [ -x "$f" ] && [ "$(basename "$f")" != "protoc" ]; then
@@ -191,7 +166,6 @@ do_install() {
         done
     fi
 
-    # Install main metavision libraries (excluding libmetavision_psee_hw_layer.so from main lib)
     for lib in \
         libmetavision_hal.so.5.1.1 \
         libmetavision_sdk_base.so.5.1.1 \
@@ -206,27 +180,21 @@ do_install() {
         fi
     done
 
-    # Install the ENTIRE metavision directory structure
     if [ -d "${B}/lib/metavision" ]; then
         echo "=== Copying entire metavision directory structure ==="
 
-        # Create destination directory
         install -d ${D}${libdir}/metavision
 
-        # Copy everything from the metavision directory
         cp -r ${B}/lib/metavision/* ${D}${libdir}/metavision/
 
         echo "Copied entire metavision directory to ${D}${libdir}/"
 
-        # List the contents for verification
         find ${D}${libdir}/metavision -type f | head -20
     fi
 
-    # Create plugin configuration
     install -d ${D}${sysconfdir}/metavision/hal
     echo "/usr/lib/metavision/hal" > ${D}${sysconfdir}/metavision/hal/plugins-path
 
-    # Debug: List what was installed
     echo "=== Installed binaries ==="
     ls -la ${D}${bindir}/* 2>/dev/null || echo "No binaries installed"
 
@@ -237,24 +205,17 @@ do_install() {
     find ${D}${libdir}/metavision -type d 2>/dev/null | head -10 || echo "No metavision directory found"
 }
 
-# ----------------------------
-# FIXED: Create proper version symlinks and handle duplicates
-# ----------------------------
 do_install:append() {
-    # Create version symlinks for metavision libraries
     cd ${D}${libdir}
 
-    # Create .so.5 symlinks for all versioned libraries
     for lib in *.so.5.1.1; do
         if [ -f "$lib" ]; then
-            # Create major version symlink (libname.so.5 -> libname.so.5.1.1)
             major_lib="${lib%.1.1}"
             if [ ! -e "$major_lib" ]; then
                 ln -sf "$lib" "$major_lib"
                 echo "Created symlink: $major_lib -> $lib"
             fi
 
-            # Create base symlink (libname.so -> libname.so.5)
             base_lib="${lib%.5.1.1}.so"
             if [ ! -e "$base_lib" ]; then
                 ln -sf "$major_lib" "$base_lib"
@@ -263,10 +224,6 @@ do_install:append() {
         fi
     done
 
-    # ----------------------------
-    # CRITICAL FIX: Remove duplicate libmetavision_psee_hw_layer.so from main lib directory
-    # We only want the one in metavision/hal/plugins/
-    # ----------------------------
     if [ -f "${D}${libdir}/libmetavision_psee_hw_layer.so" ]; then
         echo "REMOVING DUPLICATE: ${D}${libdir}/libmetavision_psee_hw_layer.so"
         rm -f ${D}${libdir}/libmetavision_psee_hw_layer.so*
@@ -276,35 +233,25 @@ do_install:append() {
     echo "=== Final library symlinks ==="
     ls -la ${D}${libdir}/libmeta*.so* 2>/dev/null || echo "No libraries found"
 
-    # ----------------------------
-    # FIXED: COMPLETELY REMOVE ALL DEBUG FILES
-    # ----------------------------
     echo "=== Removing all debug files ==="
 
-    # Remove .debug directories recursively from the entire installation
     find ${D} -type d -name ".debug" -exec rm -rf {} + 2>/dev/null || true
 
-    # Remove any individual .debug files
     find ${D} -type f -name "*.debug" -delete 2>/dev/null || true
 
-    # Strip binaries and libraries to remove embedded debug symbols
     if [ -d "${D}${bindir}" ]; then
         find ${D}${bindir} -type f -executable -exec ${STRIP} {} \; 2>/dev/null || true
     fi
 
     if [ -d "${D}${libdir}" ]; then
-        # Strip main libraries
         find ${D}${libdir} -maxdepth 1 -type f -name "*.so*" -exec ${STRIP} {} \; 2>/dev/null || true
-        # Strip libraries in metavision directory
         find ${D}${libdir}/metavision -type f -name "*.so*" -exec ${STRIP} {} \; 2>/dev/null || true
     fi
 
-    # Verify no debug files remain
     echo "=== Checking for remaining debug files ==="
     find ${D} -name ".debug" -o -name "*.debug" | while read f; do
         if [ -e "$f" ]; then
             echo "WARNING: Debug file still exists: $f"
-            # Force remove any remaining debug files
             rm -rf "$f"
         fi
     done
@@ -318,11 +265,6 @@ do_install:append() {
     find ${D}${libdir}/metavision -type f | head -20 || true
 }
 
-# ----------------------------
-# FIXED: Package all libraries and the entire metavision directory
-# ----------------------------
-
-# Main package only
 PACKAGES = "${PN}"
 
 FILES:${PN} = " \
@@ -332,17 +274,13 @@ FILES:${PN} = " \
     ${sysconfdir}/metavision/hal/plugins-path \
 "
 
-# Make sure development packages are not created
 FILES:${PN}-dev = ""
 
-# Skip QA issues
 INSANE_SKIP:${PN} = "dev-so already-stripped ldflags file-rdeps installed-vs-shipped buildpaths"
 ERROR_QA:remove = "multiple-shlib-providers"
 WARN_QA:append = " multiple-shlib-providers"
 
-# Ensure all libraries are included in the package
 FILES_SOLIBSDEV = ""
 
-# Disable debug package generation
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 INHIBIT_PACKAGE_STRIP = "0"

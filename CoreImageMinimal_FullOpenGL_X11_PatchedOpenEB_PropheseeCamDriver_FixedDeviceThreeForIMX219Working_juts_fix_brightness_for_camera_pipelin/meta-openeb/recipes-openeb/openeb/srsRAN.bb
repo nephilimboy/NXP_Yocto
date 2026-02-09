@@ -7,7 +7,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=73f1eb20517c55bf9493b7dd6e480788"
 SRC_URI = "git://github.com/srsRAN/srsRAN_Project.git;branch=main;protocol=https"
 SRCREV = "${AUTOREV}"
 
-# git ls-remote https://github.com/srsRAN/srsRAN_Project.git main
 S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
@@ -27,12 +26,9 @@ RDEPENDS:${PN} += "bash"
 EXTRA_OECMAKE = "-DENABLE_TESTS=OFF"
 
 do_install() {
-    ## Ninja not Makefile!
-    # oe_runmake install DESTDIR=${D}
     DESTDIR=${D} ninja -C ${B} install
 }
 
-# Fixing ERROR: srsran-git-r0 do_package_qa: QA Issue: File /usr/share/srsran.spdx in package srsran contains reference to TMPDIR [buildpaths]
 do_install:append() {
     find ${D} -name "*.spdx" -delete
 }

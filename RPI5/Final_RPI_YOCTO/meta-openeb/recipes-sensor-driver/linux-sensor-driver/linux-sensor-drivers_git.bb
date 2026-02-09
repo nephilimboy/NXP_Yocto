@@ -14,10 +14,8 @@ DEPENDS += "virtual/kernel"
 
 EXTRA_OEMAKE += "EXTRA_CFLAGS='-DOMIT_PSEE_FORMATS'"
 
-# Autoload modules
 KERNEL_MODULE_AUTOLOAD += "imx636 genx320_driver"
 
-# QA tweaks (optional)
 INSANE_SKIP:${PN} += "debug-deps"
 INSANE_SKIP:kernel-module-imx636 += "debug-deps"
 INSANE_SKIP:kernel-module-genx320-driver += "debug-deps"

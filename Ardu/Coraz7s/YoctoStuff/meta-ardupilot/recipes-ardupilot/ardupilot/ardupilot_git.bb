@@ -12,10 +12,10 @@ SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-# ArduPilot uses waf
+
 inherit python3native pkgconfig
 
-# Required native tools
+
 DEPENDS += " \
     python3-native \
     python3-pip-native \
@@ -26,14 +26,14 @@ DEPENDS += " \
     python3-pexpect-native \
 "
 
-# Zynq is ARMv7-A (NOT aarch64)
+
 TARGET_CC_ARCH += "${LDFLAGS}"
 
 do_configure() {
     cd ${S}
 
 
-    # Force waf to use Yocto toolchain
+   
     export CC="${CC}"
     export CXX="${CXX}"
     export AR="${AR}"
@@ -42,7 +42,7 @@ do_configure() {
     export CXXFLAGS="${CXXFLAGS}"
     export LDFLAGS="${LDFLAGS}"
 
-    # Configure for OBAL board
+  
     ./waf configure \
         --board=obal \
         --prefix=/usr
