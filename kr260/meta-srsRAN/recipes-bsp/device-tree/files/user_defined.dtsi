@@ -1,0 +1,52 @@
+/{
+    axi {
+        ethernet@ff0c0000 {
+			mdio {
+				phandle = <0x91>;
+				#size-cells = <0x00>;
+				#address-cells = <0x01>;
+
+				ethernet-phy@8 {
+					phandle = <0x89>;
+					reset-gpios = <0x83 0x06 0x01>;
+					reset-deassert-us = <0x118>;
+					reset-assert-us = <0x64>;
+					ti,dp83867-rxctrl-strap-quirk;
+					ti,fifo-depth = <0x01>;
+					ti,tx-internal-delay = <0x0a>;
+					ti,rx-internal-delay = <0x08>;
+					reg = <0x08>;
+					compatible = "ethernet-phy-id2000.a231";
+					#phy-cells = <0x01>;
+				};
+
+				ethernet-phy@4 {
+					phandle = <0x87>;
+					reset-gpios = <0x83 0x05 0x01>;
+					reset-deassert-us = <0x118>;
+					reset-assert-us = <0x12c>;
+					ti,dp83867-rxctrl-strap-quirk;
+					ti,fifo-depth = <0x01>;
+					ti,tx-internal-delay = <0x0a>;
+					ti,rx-internal-delay = <0x08>;
+					reg = <0x04>;
+					compatible = "ethernet-phy-id2000.a231";
+					#phy-cells = <0x01>;
+				};
+			};
+		};
+
+        // Disabeling the write ptotection on SD card so the rootFS can be eddited
+        mmc@ff160000 {
+            disable-wp;
+            xlnx,has-wp = <0x00>;
+        };
+
+    };
+
+
+    chosen {
+        bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused xilinx_tsn_ep.st_pcp=4 init_fatal_sh=1 cma=900M ";
+        stdout-path = "serial1:115200n8";
+    };
+};
